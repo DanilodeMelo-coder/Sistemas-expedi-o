@@ -14,7 +14,7 @@ class Base(DeclarativeBase):
 
 def get_session():
 
-    db= sessionmaker
+    db= sessionmaker()
 
     try:
 
@@ -22,4 +22,4 @@ def get_session():
 
     finally:
 
-        db.close()
+        db.close()  

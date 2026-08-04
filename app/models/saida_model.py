@@ -10,7 +10,7 @@ class Saida(Base):
 
     id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
     motoboy_id = Column(String, ForeignKey("motoboys.id"), nullable=False)
-    status_saida = Column(Enum(Status_SaidaE), default=Status_SaidaE.sugerida)
+    status_saida = Column(Enum(Status_SaidaE), default=Status_SaidaE.SUGERIDA)
     horario_criacao = Column(DateTime, default=datetime.utcnow) 
     horario_confirmacao = Column(DateTime)
     horario_finalizacao = Column(DateTime)

@@ -1,7 +1,7 @@
 from core.database import Base
 from sqlalchemy import String, Column, ForeignKey, Enum, DateTime
 from sqlalchemy.orm import relationship
-from models.enum_status_saida import Status_SaidaE
+from app.models.enum_status_saida import Status_SaidaE
 import uuid
 from datetime import datetime
 

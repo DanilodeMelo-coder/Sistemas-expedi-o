@@ -2,7 +2,7 @@ from core.database import Base
 from sqlalchemy import DateTime, Float, Integer, String, Column, Enum, ForeignKey
 from sqlalchemy.orm import relationship
 import uuid
-from models.enum_status_pedido import Status_PedidoE
+from app.models.enum_status_pedido import Status_PedidoE
 
 
 class Pedido(Base):

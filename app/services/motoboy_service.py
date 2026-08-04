@@ -20,3 +20,24 @@ def criar_motoboy(db: Session, dados: MotoboySchema_request):
     return motoboy_novo
 
 
+
+
+#listar motoboys
+def listar_motoboys_service(db: Session):
+    motoboys = db.query(Motoboy).all()
+    return motoboys
+
+
+#deletar motoboy
+def deletar_motoboy_service(db: Session, motoboy_id: str):
+
+    motoboy = db.query(Motoboy).filter(Motoboy.id == motoboy_id).first()
+    if not motoboy:
+        return {"status": "erro",
+        "mensagem": "Motoboy não encontrado",
+        "data": None}
+
+    db.delete(motoboy)
+    db.commit()
+    
+    return motoboy
